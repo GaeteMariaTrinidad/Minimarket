@@ -20,10 +20,12 @@ public class Minimarket {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
         int op;
+        
         Carrito car = new Carrito();
+        System.out.println("¡BIENVENIDO A LA COMPLETA FERIA!");
         do {
-            System.out.println("Bienvenido a La Completa Feria");
-            System.out.println("***MENÚ***");
+            
+            System.out.println("\n***MENÚ***");
             System.out.println("1.- Agregar productos al carrito");
             System.out.println("2.- Mostrar productos en el carrito");
             System.out.println("3.- Eliminar productos del carrito");
@@ -45,7 +47,9 @@ public class Minimarket {
                     break;
                 case 4:
                     car.totalProductos();
-                    car.mostrarProducto(1);
+                    car.mostrarProducto(1,sc);
+                    //car.precioFinalProducto(p, op);
+                    System.out.println("Compra realizada con éxito.");
                     break;
                 case 5:
                     System.out.println("Gracias por usar el sistema");

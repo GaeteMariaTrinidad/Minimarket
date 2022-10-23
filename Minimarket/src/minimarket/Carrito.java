@@ -53,7 +53,7 @@ public class Carrito implements CalculoCompra{
     }
 
     public void agregarProducto(Scanner sc) {
-        System.out.println("Ingrese el nombre del produxto: ");
+        System.out.println("Ingrese el nombre del producto: ");
         String n = sc.next();
         int htipo=0;
         boolean existe = this.validarProducto(n);
@@ -73,15 +73,16 @@ public class Carrito implements CalculoCompra{
                 }
             }
         } else {
+            System.out.println("Ingrese el tipo de producto: 1- Carne 2- Verdura 3- Bebestible");
+            int tipo = sc.nextInt();
             System.out.println("Ingrese el código del producto: ");
             int cod = sc.nextInt();
             System.out.println("Ingrese el precio del producto: ");
             int pre = sc.nextInt();
-            System.out.println("Ingrese la cantidad del procuto: ");
+            System.out.println("Ingrese la cantidad del producto: ");
             int cant = sc.nextInt();
             int sub = 0;
-            System.out.println("Tipo producto: 1- Carne \n 2- Verdura \n 3- Bebestible");
-            int tipo = sc.nextInt();
+            
             switch (tipo) {
                 case 1:
                     System.out.println("Ingrese tipo de corte: ");
@@ -109,37 +110,42 @@ public class Carrito implements CalculoCompra{
                     precioFinalProducto(p, htipo);
                 }
             }
+            System.out.println("\nProducto agregado al carrito con éxito!");
         }
         //aquí calcular el subtotal.
     }
 
     public void mostrarProducto() {
+        System.out.println("\nCARRITO DE COMPRA: \n");
         for (Producto p : listaProductos) {
             if (p instanceof Carne) {
                 Carne ca = (Carne) p;
-                System.out.println("nombre carne: " + ca.nombre);
-                System.out.println("codigo: " + ca.codigo);
-                System.out.println("precio: " + ca.precio);
-                System.out.println("tipo corte: " + ca.getTipoCorte());
-                System.out.println("subtotal: " + ca.subtotal);
+                System.out.println("\nNombre carne: " + ca.nombre);
+                System.out.println("Código: " + ca.codigo);
+                System.out.println("Precio: $" + ca.precio);
+                System.out.println("Cantidad: " + ca.cantidad);
+                System.out.println("Tipo de corte: " + ca.getTipoCorte());
+                System.out.println("Subtotal: $" + ca.subtotal);
 
             }
             if (p instanceof Verdura) {
                 Verdura ve = (Verdura) p;
-                System.out.println("nombre verdura: " + ve.nombre);
-                System.out.println("codigo: " + ve.codigo);
-                System.out.println("precio: " + ve.precio);
-                System.out.println("valor nutricional: " + ve.getValorNutricional());
-                System.out.println("subtotal: " + ve.subtotal);
+                System.out.println("\nNombre verdura: " + ve.nombre);
+                System.out.println("Código: " + ve.codigo);
+                System.out.println("Precio: " + ve.precio);
+                System.out.println("Cantidad: " + ve.cantidad);
+                System.out.println("Valor nutricional: " + ve.getValorNutricional());
+                System.out.println("Subtotal: $" + ve.subtotal);
 
             }
             if (p instanceof Bebestible) {
                 Bebestible be = (Bebestible) p;
-                System.out.println("nombre bebestible: " + be.nombre);
-                System.out.println("codigo: " + be.codigo);
-                System.out.println("precio: " + be.precio);
-                System.out.println("cantidad ml: " + be.getCantidadMLitros());
-                System.out.println("subtotal: " + be.subtotal);
+                System.out.println("\nNombre bebestible: " + be.nombre);
+                System.out.println("Código: " + be.codigo);
+                System.out.println("Precio: " + be.precio);
+                System.out.println("Cantidad: " + be.cantidad);
+                System.out.println("Cantidad ml: " + be.getCantidadMLitros());
+                System.out.println("Subtotal: $" + be.subtotal);
 
             }
         }
@@ -147,39 +153,43 @@ public class Carrito implements CalculoCompra{
     }
     
     
-    public void mostrarProducto(int g) {
-        System.out.println("Listado de Prodcutos");
+    public void mostrarProducto(int g, Scanner sc) {
+        
+        System.out.println("\nCARRITO DE COMPRA-CHECKOUT: \n");
         for (Producto p : listaProductos) {
-            if (p instanceof Carne) {
+             if (p instanceof Carne) {
                 Carne ca = (Carne) p;
-                System.out.println("nombre carne: " + ca.nombre);
-                System.out.println("codigo: " + ca.codigo);
-                System.out.println("precio: " + ca.precio);
-                System.out.println("tipo corte: " + ca.getTipoCorte());
-                System.out.println("subtotal: " + ca.subtotal);
+                System.out.println("\nNombre carne: " + ca.nombre);
+                System.out.println("Código: " + ca.codigo);
+                System.out.println("Precio: $" + ca.precio);
+                System.out.println("Cantidad: " + ca.cantidad);
+                System.out.println("Tipo de corte: " + ca.getTipoCorte());
+                System.out.println("Subtotal: $" + ca.subtotal);
 
             }
             if (p instanceof Verdura) {
                 Verdura ve = (Verdura) p;
-                System.out.println("nombre verdura: " + ve.nombre);
-                System.out.println("codigo: " + ve.codigo);
-                System.out.println("precio: " + ve.precio);
-                System.out.println("valor nutricional: " + ve.getValorNutricional());
-                System.out.println("subtotal: " + ve.subtotal);
+                System.out.println("\nNombre verdura: " + ve.nombre);
+                System.out.println("Código: " + ve.codigo);
+                System.out.println("Precio: $" + ve.precio);
+                System.out.println("Cantidad: " + ve.cantidad);
+                System.out.println("Valor nutricional: " + ve.getValorNutricional());
+                System.out.println("Subtotal: $" + ve.subtotal);
 
             }
             if (p instanceof Bebestible) {
                 Bebestible be = (Bebestible) p;
-                System.out.println("nombre bebestible: " + be.nombre);
-                System.out.println("codigo: " + be.codigo);
-                System.out.println("precio: " + be.precio);
-                System.out.println("cantidad ml: " + be.getCantidadMLitros());
-                System.out.println("subtotal: " + be.subtotal);
+                System.out.println("\nNombre bebestible: " + be.nombre);
+                System.out.println("Código: " + be.codigo);
+                System.out.println("Precio: $" + be.precio);
+                System.out.println("Cantidad: " + be.cantidad);
+                System.out.println("Cantidad ml: " + be.getCantidadMLitros());
+                System.out.println("Subtotal: $" + be.subtotal);
 
             }
         }
-        System.out.println("Total a pagar: $" + total);
-
+        System.out.println("\nEL TOTAL A PAGAR ES DE: $" + total);
+        
     }
 
     public void eliminarProducto(String nombre) {
