@@ -14,6 +14,6 @@ public interface CalculoCompra {
     int DESCUENTO_CARNE = 20;
     int DESCUENTO_BEBESTIBLE = 12;
     
-    void precioFinalProducto();
+    void precioFinalProducto(Producto p, int t);
     void totalProductos();
 }

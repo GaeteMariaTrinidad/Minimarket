@@ -146,12 +146,24 @@ public class Carrito implements CalculoCompra{
     }
 
     @Override
-    public void precioFinalProducto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void precioFinalProducto(Producto p, int t) {
+        p.subtotal = p.cantidad*p.precio;
+        switch (t){
+            case 1:
+                p.subtotal = p.subtotal - (p.subtotal*(DESCUENTO_CARNE/100));
+                break;
+            case 3:
+                p.subtotal = p.subtotal - (p.subtotal*(DESCUENTO_BEBESTIBLE/100));
+                break;
+        }
+        
     }
 
     @Override
     public void totalProductos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (Producto p: listaProductos){
+            total += p.subtotal;    
+        }
+        total = total + (total*(IVA/100));
     }
 }
