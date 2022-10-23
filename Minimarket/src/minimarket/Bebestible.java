@@ -11,4 +11,5 @@ package minimarket;
  */
 public class Bebestible {
     
+    
 }
