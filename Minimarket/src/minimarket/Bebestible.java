@@ -9,7 +9,7 @@ package minimarket;
  *
  * @author Trinidad Gaete
  */
-public class Bebestible extends Producto{
+public class Bebestible extends Producto {
     private int cantidadMLitros;
 
     public Bebestible() {
