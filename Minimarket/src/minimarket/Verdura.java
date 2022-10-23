@@ -16,8 +16,8 @@ public class Verdura extends Producto {
     public Verdura() {
     }
 
-    public Verdura(String valorNutricional, String nombre, int codigo, int precio, int cantidad) {
-        super(nombre, codigo, precio, cantidad);
+    public Verdura(String valorNutricional, String nombre, int codigo, int precio, int cantidad, int subtotal) {
+        super(nombre, codigo, precio, cantidad, subtotal);
         this.valorNutricional = valorNutricional;
     }
     

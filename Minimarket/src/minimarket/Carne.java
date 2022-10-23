@@ -16,8 +16,8 @@ public class Carne extends Producto {
     public Carne() {
     }
 
-    public Carne(String tipoCorte, String nombre, int codigo, int precio, int cantidad) {
-        super(nombre, codigo, precio, cantidad);
+    public Carne(String tipoCorte, String nombre, int codigo, int precio, int cantidad, int subtotal) {
+        super(nombre, codigo, precio, cantidad, subtotal);
         this.tipoCorte = tipoCorte;
     }
     

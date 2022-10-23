@@ -9,21 +9,23 @@ package minimarket;
  *
  * @author Trinidad Gaete
  */
-public class Producto {
+public abstract class Producto {
     
     protected String nombre;
     protected int codigo;
     protected int precio;
     protected int cantidad;
+    protected int subtotal;
 
     public Producto() {
     }
 
-    public Producto(String nombre, int codigo, int precio, int cantidad) {
+    public Producto(String nombre, int codigo, int precio, int cantidad, int subtotal) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.precio = precio;
         this.cantidad = cantidad;
+        this.subtotal = subtotal;
     }
 
     
@@ -81,6 +83,16 @@ public class Producto {
      */
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+        
+        
+    }
+
+    public int getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(int subtotal) {
+        this.subtotal = subtotal;
     }
 
 }
