@@ -9,10 +9,13 @@ package minimarket;
  *
  * @author Trinidad Gaete
  */
+//Creación de Subclase Carne (Hereda atributos de Superclase Producto)
 public class Carne extends Producto {
     
+    //Atributo propio de la subclase
     private String tipoCorte;
 
+    //Constructores    
     public Carne() {
     }
 
@@ -21,6 +24,7 @@ public class Carne extends Producto {
         this.tipoCorte = tipoCorte;
     }
     
+    //Getters & Setters
     /**
      * @return the tipoCorte
      */

@@ -9,9 +9,12 @@ package minimarket;
  *
  * @author Trinidad Gaete
  */
+//Creación de Subclase Bebestible (Hereda atributos de Superclase Producto)
 public class Bebestible extends Producto {
+    //Atributo propio de la subclase
     private int cantidadMLitros;
 
+    //Constructores
     public Bebestible() {
     }
 
@@ -20,7 +23,7 @@ public class Bebestible extends Producto {
         this.cantidadMLitros = cantidadMLitros;
     }
     
-    
+    //Getters & Setters
     /**
      * @return the cantidadMLitros
      */

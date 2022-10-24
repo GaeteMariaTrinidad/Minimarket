@@ -11,6 +11,7 @@ import java.util.Scanner;
  *
  * @author Trinidad Gaete
  */
+//Clase main
 public class Minimarket {
 
     /**
@@ -18,11 +19,15 @@ public class Minimarket {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        //Variables
         Scanner sc = new Scanner(System.in);
         int op;
-        
         Carrito car = new Carrito();
+        
+        //Saludo de bienvenida al programa
         System.out.println("¡BIENVENIDO A LA COMPLETA FERIA!");
+        //Menú en bucle. El programa no termina hasta que el usuario elija la opción "Salir".
         do {
             
             System.out.println("\n***MENÚ***");

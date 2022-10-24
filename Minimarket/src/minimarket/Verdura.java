@@ -9,10 +9,13 @@ package minimarket;
  *
  * @author Trinidad Gaete
  */
+//Creación de Subclase Verdura (Hereda atributos de Superclase Producto)
 public class Verdura extends Producto {
-
+    
+    //Atributo propio de la subclase
     private String valorNutricional;
 
+    //Constructores
     public Verdura() {
     }
 
@@ -21,6 +24,7 @@ public class Verdura extends Producto {
         this.valorNutricional = valorNutricional;
     }
     
+    //Getters & Setters
     /**
      * @return the valorNutricional
      */

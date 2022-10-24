@@ -9,6 +9,8 @@ package minimarket;
  *
  * @author Trinidad Gaete
  */
+
+//Se crea la superclase Producto. Clase abstracta
 public abstract class Producto {
     
     protected String nombre;
@@ -17,6 +19,7 @@ public abstract class Producto {
     protected int cantidad;
     protected int subtotal;
 
+    //Constructores
     public Producto() {
     }
 
@@ -28,7 +31,7 @@ public abstract class Producto {
         this.subtotal = subtotal;
     }
 
-    
+    //Getters & Setters
     /**
      * @return the nombre
      */

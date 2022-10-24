@@ -14,13 +14,16 @@ import java.util.Scanner;
  */
 public class Carrito implements CalculoCompra {
 
+    //Atributos
     private ArrayList<Producto> listaProductos;
     int total;
 
+    //Constructor
     public Carrito() {
         listaProductos = new ArrayList<>();
     }
 
+    //Getters & Setters
     public int getTotal() {
         return total;
     }
@@ -43,6 +46,7 @@ public class Carrito implements CalculoCompra {
         this.listaProductos = listaProductos;
     }
 
+    //Método que valida si existe el producto dentro del Arraylist.
     public boolean validarProducto(String nombre) {
         for (Producto p : listaProductos) {
             if (p.nombre.equals(nombre)) {
@@ -51,11 +55,13 @@ public class Carrito implements CalculoCompra {
         }
         return false;
     }
-
+    
+    //Método que agrega producto al Arraylist
     public void agregarProducto(Scanner sc) {
         System.out.println("Ingrese el nombre del producto: ");
         String n = sc.next();
         int htipo = 0;
+        //Se invoca al método validarProducto 
         boolean existe = this.validarProducto(n);
         if (existe) {
             for (Producto p : listaProductos) {
@@ -72,6 +78,7 @@ public class Carrito implements CalculoCompra {
 
                 }
             }
+            //El programa avisa al usuario que se agregó un producto más del mismo que tiene en el carrito.
             System.out.println("Se ha sumado 1 al producto que ya estaba en el carrito y esta intentando agregar ("+ n +")");
         } else {
             System.out.println("Ingrese el tipo de producto: 1- Carne 2- Verdura 3- Bebestible");
@@ -84,6 +91,7 @@ public class Carrito implements CalculoCompra {
             int cant = sc.nextInt();
             int sub = 0;
 
+            //Se agregan las variables al objeto según su subclase
             switch (tipo) {
                 case 1:
                     System.out.println("Ingrese tipo de corte: ");
@@ -113,12 +121,14 @@ public class Carrito implements CalculoCompra {
             }
             System.out.println("\nProducto agregado al carrito con éxito!");
         }
-        //aquí calcular el subtotal.
+        
     }
-
+    
+    //Método para mostrar los productos dentro del carrito.
     public void mostrarProducto() {
         System.out.println("\nCARRITO DE COMPRA: \n");
         if (listaProductos.size() > 0) {
+            //Muestra detalles de cada producto segun su clase. 
             for (Producto p : listaProductos) {
                 if (p instanceof Carne) {
                     Carne ca = (Carne) p;
@@ -157,6 +167,7 @@ public class Carrito implements CalculoCompra {
 
     }
 
+    //Método sobrecargado para mostrar productos al seleccionar op "Realizar compra" en el main
     public void mostrarProducto(int g, Scanner sc) {
 
         System.out.println("\nCARRITO DE COMPRA-CHECKOUT: \n");
@@ -201,6 +212,7 @@ public class Carrito implements CalculoCompra {
 
     }
 
+    //Método para eliminar producto dentro del carrito.
     public void eliminarProducto(String nombre) {
         int h = 0;
         for(int i=0; i < listaProductos.size(); i++){
@@ -224,6 +236,7 @@ public class Carrito implements CalculoCompra {
         }
     }
 
+    //Método para calcular los precios con descuento según requerimientos.
     @Override
     public void precioFinalProducto(Producto p, int t) {
         p.setSubtotal(p.getCantidad() * p.getPrecio());
@@ -239,6 +252,7 @@ public class Carrito implements CalculoCompra {
 
     }
 
+    //Método para calcular precio final con IVA.
     @Override
     public void totalProductos() {
         for (Producto p : listaProductos) {
