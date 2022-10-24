@@ -49,7 +49,6 @@ public class Minimarket {
                     car.totalProductos();
                     car.mostrarProducto(1,sc);
                     //car.precioFinalProducto(p, op);
-                    System.out.println("Compra realizada con éxito.");
                     break;
                 case 5:
                     System.out.println("Gracias por usar el sistema");

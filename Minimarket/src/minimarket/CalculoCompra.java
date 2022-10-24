@@ -10,9 +10,9 @@ package minimarket;
  * @author Trinidad Gaete
  */
 public interface CalculoCompra {
-    int IVA = 19;
-    int DESCUENTO_CARNE = 20;
-    int DESCUENTO_BEBESTIBLE = 12;
+    double IVA = 0.19;
+    double DESCUENTO_CARNE = 0.20;
+    double DESCUENTO_BEBESTIBLE = 0.12;
     
     void precioFinalProducto(Producto p, int t);
     void totalProductos();
