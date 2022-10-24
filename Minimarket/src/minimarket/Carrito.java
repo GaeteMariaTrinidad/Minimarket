@@ -72,6 +72,7 @@ public class Carrito implements CalculoCompra {
 
                 }
             }
+            System.out.println("Se ha sumado 1 al producto que ya estaba en el carrito y esta intentando agregar ("+ n +")");
         } else {
             System.out.println("Ingrese el tipo de producto: 1- Carne 2- Verdura 3- Bebestible");
             int tipo = sc.nextInt();
